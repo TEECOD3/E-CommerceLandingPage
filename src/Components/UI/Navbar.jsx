@@ -1,15 +1,15 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
 import CartIcon from "../Icons/IconCart";
-import avatar from "../../assets/image-avatar.png";
+import avatar from "/images/image-avatar.png";
 
 const Navabar = () => {
   return (
-    <nav className="h-28 ">
+    <nav className="p-4">
       <div className="h-24 max-w-6xl mx-auto  border-b-2 flex justify-between items-center w-full px-2">
-        <div className="flex w-1/2 justify-between items-center">
-          <img src={logo} className="w-44 h-6" alt="sneakers logo" />
-          <ul className="flex justify-between w-[65%] text-[#b6bcc8] font-[600] capitalize">
+        <div className="flex  justify-start gap-6 gapitems-center">
+          <img src={logo} className="" alt="sneakers logo" />
+          <ul className="flex gap-6  text-[#b6bcc8] font-[600] capitalize max-sm:hidden ">
             <li>
               <a href="#">collection</a>
             </li>
