@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-  --Orange: hsl(26, 100%, 55%);
+  --Orange: #ff7d1a;
   --Pale-orange: hsl(25, 100%, 94%);
   --Very-dark-blue: hsl(220, 13%, 13%);
   --Dark-grayish-blue: hsl(219, 9%, 45%);
@@ -33,7 +33,8 @@ body {
 a {
   text-decoration: none;
 }
-ul {
+
+li {
   list-style: none;
 }
 img {

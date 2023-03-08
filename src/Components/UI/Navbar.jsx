@@ -6,7 +6,7 @@ import avatar from "/images/image-avatar.png";
 const Navabar = () => {
   return (
     <nav className="p-4">
-      <div className="h-24 max-w-6xl mx-auto  border-b-2 flex justify-between items-center w-full px-2">
+      <div className="h-24 max-w-6xl mx-auto z-10 border-b-2 flex justify-between items-center w-full px-2">
         <div className="flex  justify-start gap-6 gapitems-center">
           <img src={logo} className="" alt="sneakers logo" />
           <ul className="flex gap-6  text-[#b6bcc8] font-[600] capitalize max-sm:hidden ">
