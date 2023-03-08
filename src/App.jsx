@@ -5,19 +5,23 @@ import imagedata from "./Data/Data";
 import PlusIcon from "./Components/Icons/IconPlus";
 import MinusIcon from "./Components/Icons/IconMinus";
 import Button from "./Components/UI/Button";
-import CartIcon from "./Components/Icons/IconCart";
 import Modal from "./Components/UI/Modal";
+import Cart from "./Components/Cart/Cart";
 
 function App() {
   const products = [...imagedata];
   const [currentVal, setCurrentVal] = useState(0);
   const [openModal, SetModal] = useState(false);
   const [modalcurrval, setmodalcurrval] = useState(0);
+  const [cart, setCart] = useState(false);
 
   const { mainImage } = products[currentVal];
   const { mainImage: modalseries } = products[modalcurrval];
   return (
     <>
+      {cart && (
+        <Cart className="absolute z-[80] right-32 top-24 max-sm:right-0 max-sm:left-0 max-sm:w-[90%] max-sm:mx-auto max-sm:mt-5 " />
+      )}
       {openModal && (
         <Modal
           onClick={() => {
@@ -32,7 +36,7 @@ function App() {
                 SetModal(true);
               }}
               src={modalseries}
-              className="w-6/12 max-sm:w-full rounded-2xl mx-auto max-sm:rounded-none"
+              className="w-6/12 max-sm:w-full rounded-2xl mx-auto max-sm:rounded-none cursor-pointer"
             />
 
             <div className="flex max-sm:hidden mt-4 gap-4 justify-center w-full flex-wrap">
@@ -45,7 +49,7 @@ function App() {
                   className={`${
                     index === modalcurrval &&
                     "bg-orange-800 opacity-50 overflow-hidden rounded-xl border-2 border-orange-600"
-                  }`}
+                  } cursor-pointer`}
                 >
                   <img
                     className={`rounded-xl w-16 `}
@@ -58,7 +62,7 @@ function App() {
           </div>
         </Modal>
       )}
-      <Navbar />
+      <Navbar cart={setCart} Cartshowing={cart} />
       <main>
         <div className="flex max-sm:flex-col max-w-6xl max-sm:w-full mx-auto mt-4 max-sm:mt-[-15px] z-2 gap-10 max-md:gap-5 ">
           <div className=" w-1/2 max-sm:w-full ">
@@ -68,7 +72,7 @@ function App() {
                   SetModal(true);
                 }}
                 src={mainImage}
-                className="w-10/12 max-sm:w-full rounded-2xl mx-auto max-sm:rounded-none"
+                className="w-10/12 max-sm:w-full rounded-2xl mx-auto max-sm:rounded-none cursor-pointer"
               />
 
               <div className="flex max-sm:hidden mt-4 gap-4 justify-center w-full flex-wrap">
@@ -81,7 +85,7 @@ function App() {
                     className={`${
                       index === currentVal &&
                       "bg-orange-800 opacity-50 overflow-hidden rounded-xl border-2 border-orange-600"
-                    }`}
+                    } cursor-pointer`}
                   >
                     <img
                       className={`rounded-xl w-24`}
