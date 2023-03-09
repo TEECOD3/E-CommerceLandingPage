@@ -11,7 +11,7 @@ const Navabar = (props) => {
   const { cart, Cartshowing } = props;
   return (
     <nav className="p-4 ">
-      <div className="h-24 max-w-6xl mx-auto border-b-2 flex justify-between lg:gap-[38rem] items-center  md:gap-[10rem] w-full px-2">
+      <div className="h-24 max-w-6xl mx-auto border-b-2 flex justify-between lg:gap-[34rem] items-center  md:gap-[10rem] w-full px-2">
         <div className="flex  gap-6 max-sm:gap-2 items-center">
           <img
             src={iconmenu}
