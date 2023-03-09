@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "./Components/UI/Navbar";
 import { useState } from "react";
 import imagedata from "./Data/Data";
-import PlusIcon from "./Components/Icons/IconPlus";
 import Button from "./Components/UI/Button";
 import Modal from "./Components/UI/Modal";
 import Cart from "./Components/Cart/Cart";
@@ -40,7 +39,7 @@ function App() {
                 SetModal(true);
               }}
               src={modalseries}
-              className="w-6/12 max-sm:w-full rounded-2xl mx-auto max-sm:rounded-none cursor-pointer"
+              className="w-6/12 max-sm:w-full rounded-2xl mx-auto max-sm:rounded-none cursor-pointer transition-all duration-75 ease-in"
             />
 
             <div className="flex max-sm:hidden mt-4 gap-4 justify-center w-full flex-wrap">
@@ -57,7 +56,7 @@ function App() {
                     } cursor-pointer`}
                   >
                     <img
-                      className={`rounded-xl w-16 `}
+                      className={`rounded-xl w-16 transition-all duration-75 ease-in`}
                       src={product.thumbNail}
                       alt="thumbnail-image"
                     />
