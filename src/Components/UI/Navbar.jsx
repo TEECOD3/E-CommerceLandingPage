@@ -3,14 +3,16 @@ import logo from "../../assets/logo.svg";
 import CartIcon from "../Icons/IconCart";
 import { useState } from "react";
 import avatar from "/images/image-avatar.png";
-import iconclose from "../../assets/icon-close.svg";
+
 import iconmenu from "../../assets/icon-menu.svg";
+import Mobilenav from "./Mobilenav";
 
 const Navabar = (props) => {
   const [modalState, setModalstate] = useState(false);
   const { cart, Cartshowing } = props;
   return (
     <nav className="p-4 ">
+      {modalState && <Mobilenav setModalstate={setModalstate} />}
       <div className="h-24 max-w-6xl mx-auto border-b-2 flex justify-between lg:gap-[34rem] items-center  md:gap-[10rem] w-full px-2">
         <div className="flex  gap-6 max-sm:gap-2 items-center">
           <img
@@ -22,36 +24,6 @@ const Navabar = (props) => {
             }}
           />
 
-          {modalState && (
-            <nav className="absolute w-[75%] h-[150%] md:hidden lg:hidden bg-white left-0 top-0 z-50 bottom-0">
-              <ul className="lg:hidden flex flex-col items-start mt-4 h-full gap-5 capitalize ml-8 font-bold">
-                <img
-                  src={iconclose}
-                  alt="closeicon"
-                  className="h-5 w-5 cursor-pointer mb-16"
-                  onClick={() => {
-                    setModalstate(false);
-                  }}
-                />
-
-                <li>
-                  <a href="#">collection</a>
-                </li>
-                <li>
-                  <a href="#">men</a>
-                </li>
-                <li>
-                  <a href="#">women</a>
-                </li>
-                <li>
-                  <a href="#">about</a>
-                </li>
-                <li>
-                  <a href="#">contact</a>
-                </li>
-              </ul>
-            </nav>
-          )}
           <img src={logo} className="" alt="sneakers logo" />
           <ul className="flex gap-6  text-[#b6bcc8] font-[600] capitalize max-sm:hidden max-md:hidden">
             <li>

@@ -1,5 +1,5 @@
 import React from "react";
-import imagedata from "../../Data/Data";
+import { motion } from "framer-motion";
 import Button from "../UI/Button";
 import CartItem from "./CartItem";
 
@@ -15,7 +15,9 @@ const data = [
 const Cart = (props) => {
   const { className } = props;
   return (
-    <div
+    <motion.div
+      initial={{ y: -200 }}
+      animate={{ y: 0 }}
       className={`${"w-[21rem] p-4 rounded-xl shadow-2xl bg-white"} ${className}`}
     >
       {data.map((data) => (
@@ -28,7 +30,7 @@ const Cart = (props) => {
         </ul>
       ))}
       <Button className="hover:bg-orange-300 w-full">Checkout</Button>
-    </div>
+    </motion.div>
   );
 };
 
