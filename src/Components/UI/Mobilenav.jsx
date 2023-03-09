@@ -16,7 +16,7 @@ const Mobilenav = (props) => {
       <motion.nav
         initial={{ x: 300 }}
         animate={{ x: 0 }}
-        className="absolute w-[75%] h-[150%] md:hidden lg:hidden bg-white left-0 top-0 z-50 bottom-0"
+        className="absolute w-[75%] h-[150%] md:hidden lg:hidden bg-white left-0 top-0 z-[80] bottom-0"
       >
         <ul className="lg:hidden flex flex-col items-start mt-4 h-full gap-5 capitalize ml-8 font-bold">
           <img

@@ -25,7 +25,7 @@ const Overlaymodal = (props) => {
     >
       <IconClose
         onClick={onClick}
-        className="absolute right-[12rem] top-[0px] max-sm:right-[0] cursor-pointer"
+        className="absolute right-[12rem] top-[0px] max-sm:right-[0] text-white cursor-pointer max-md:right-[4rem] "
       />
       {children}
     </motion.div>
