@@ -17,7 +17,7 @@ const CartItem = (props) => {
               <div className="font-bold">
                 <span className=" text-gray-600/60 mr-1"> ${price} x</span>
                 <span className="mr-3  text-gray-600/60">{amount}</span>
-                <span className="font-bold text-black">${totalamt}</span>
+                <span className="font-bold text-black">${totalAmount}</span>
               </div>
             </div>
             <img
