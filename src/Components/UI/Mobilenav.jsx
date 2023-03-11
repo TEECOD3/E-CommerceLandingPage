@@ -8,6 +8,7 @@ const Mobilenav = (props) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         className="bg-black/60 h-[150%] w-full z-30 fixed top-0 left-0 cursor-pointer "
         onClick={() => {
           setModalstate(false);
@@ -22,7 +23,7 @@ const Mobilenav = (props) => {
           <img
             src={iconclose}
             alt="closeicon"
-            className="h-5 w-5 cursor-pointer mb-16"
+            className="h-8 w-8 cursor-pointer p-2 mb-16"
             onClick={() => {
               setModalstate(false);
             }}

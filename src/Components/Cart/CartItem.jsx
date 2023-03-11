@@ -1,7 +1,7 @@
 import React from "react";
 import deleteicon from "../../assets/icon-delete.svg";
 const CartItem = (props) => {
-  const { price, amount, thumbNail } = props;
+  const { price, amount, thumbNail, onDelete, totalamt } = props;
 
   const totalAmount = price * amount;
   return (
@@ -17,14 +17,14 @@ const CartItem = (props) => {
               <div className="font-bold">
                 <span className=" text-gray-600/60 mr-1"> ${price} x</span>
                 <span className="mr-3  text-gray-600/60">{amount}</span>
-                <span className="font-bold text-black">${totalAmount}</span>
+                <span className="font-bold text-black">${totalamt}</span>
               </div>
             </div>
-
             <img
+              onClick={onDelete}
               src={deleteicon}
               alt="deleteicon"
-              className="w-3  h-4 absolute right-4 top-28"
+              className="w-3  h-4 absolute right-4 top-28 cursor-pointer"
             />
           </div>
         </div>
