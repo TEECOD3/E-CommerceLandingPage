@@ -45,7 +45,7 @@ const Cart = (props) => {
                 totalamt={cartCtx.totalAmountOfItemInCart}
                 onDelete={deleteHandler.bind(null, data.id)}
               />
-              <Button className="hover:bg-orange-300 w-full mt-2">
+              <Button className="hover:bg-orange-300 w-full mt-2 visited:bg-orange-600">
                 Checkout
               </Button>
             </ul>
