@@ -1,21 +1,46 @@
 import React from "react";
 import logo from "../../assets/logo.svg";
 import CartIcon from "../Icons/IconCart";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import avatar from "/images/image-avatar.png";
 import CartContext from "../../Store/CartContext";
 import iconmenu from "../../assets/icon-menu.svg";
 import Mobilenav from "./Mobilenav";
 
 const Navabar = (props) => {
+  const { cart } = props;
   const [modalState, setModalstate] = useState(false);
+  const [animatecart, SetAnimatecart] = useState(false);
   const cartcontext = useContext(CartContext);
   const items = cartcontext.Items;
 
   const amountOfCart = items.reduce((currtotal, item) => {
     return currtotal + item.amount;
   }, 0);
-  const { cart } = props;
+  // const amountOfCart = items.length
+
+  const amountClasses = `${"absolute bg-orange-400 rounded-full w-4 h-4  text-[12px]  z-10 text-white flex items-center justify-center top-0 right-0 "} ${
+    animatecart ? "animate-bounce" : ""
+  }`;
+
+  const Cartclasses = `${"cursor-pointer p-1 max-sm:p-2 "} ${
+    animatecart ? "animate-bounce" : ""
+  }`;
+
+  useEffect(() => {
+    if (items.length === 0) {
+      return;
+    }
+    SetAnimatecart(true);
+    const timer = setTimeout(() => {
+      SetAnimatecart(false);
+    }, 1500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [items]);
+
   return (
     <nav className="p-4 ">
       {modalState && <Mobilenav setModalstate={setModalstate} />}
@@ -53,12 +78,10 @@ const Navabar = (props) => {
         <div className="flex items-center  ">
           <div className=" mr-6 max-sm:mr-5 relative ">
             {items.length > 0 && (
-              <span className="absolute bg-orange-400 rounded-full w-4 h-4  text-[12px]  text-white flex items-center justify-center top-0 right-0 ">
-                {amountOfCart}
-              </span>
+              <span className={amountClasses}>{amountOfCart}</span>
             )}
             <div
-              className="cursor-pointer p-1 max-sm:p-2  "
+              className={Cartclasses}
               onClick={() => {
                 cart(true);
               }}
